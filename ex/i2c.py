@@ -82,9 +82,12 @@ def main():
   while True:
 
     # Send some test
-    lcd_string("I'm Shuya!         <",LCD_LINE_1)
-    lcd_string("I like program        <",LCD_LINE_2)
+    lcd_string("I'm hiroki!         <",LCD_LINE_1)
+    lcd_string("I like soccer       <",LCD_LINE_2)
 
+    time.sleep(3)
+    lcd_string("nice to meet you         <",LCD_LINE_1)
+    lcd_string("       <",LCD_LINE_2)
     time.sleep(3)
 
 if __name__ == '__main__':
