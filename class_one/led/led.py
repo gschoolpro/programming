@@ -10,7 +10,7 @@ def led_init(): #初期設定
     pi.wiringPiSetupGpio() # GPIO名で番号を指定する
     pi.pinMode( led_pin, pi.OUTPUT )
 
-def main():
+def main(): #動作命令
 
     led_init() #初期設定の呼び出し
  

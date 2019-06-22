@@ -13,7 +13,7 @@ def led_init(): #初期設定
     pi.pinMode( led_switch, 0 )
     pi.pullUpDnControl( led_switch,2 )
 
-def main():   #動作設定
+def main():   #動作命令
 
     led_init() #初期設定の呼び出し
  
