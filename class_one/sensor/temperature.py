@@ -5,22 +5,22 @@ import time
 import wiringpi as pi
 import dht11        #gitでクローンする
 
-temp_sensor=23
+temp_sensor=23 #GPIO23に接続
 
 def temp_init(): #初期設定
     GPIO.setmode(GPIO.BCM)
     pi.wiringPiSetupGpio() # GPIO名で番号を指定する
-    pi.pinMode( temp_sensor, pi.INPUT )
+    pi.pinMode( temp_sensor, pi.INPUT ) #温湿度センサのデータを入力として扱う
 
 def main():     #動作設定
 
     temp_init() #初期設定の呼び出し
 
-    instance = dht11.DHT11( pin = temp_sensor )
+    instance = dht11.DHT11( pin = temp_sensor )  #温湿度センサのデータをinstanceに格納
     while True:
-        result = instance.read()
-        if result.is_valid():
-            print("Temperature = ",result.temperature,"C"," Humidity = ",result.humidity,"%")
+        result = instance.read() #resultにデータを読ませる
+        if result.is_valid(): #もしresultにデータが入っている場合
+            print("Temperature = ",result.temperature,"C"," Humidity = ",result.humidity,"%") #データにある温度と湿度を画面に表示
             time.sleep(1)
 
 if __name__ == '__main__':
@@ -30,4 +30,4 @@ if __name__ == '__main__':
     except KeyboardInterrupt: #キーボードが押されたとき
         pass
     finally: #終了時(ctrl+cなど)
-        pass
+        GPIO.cleanup() #GPIOの終了
