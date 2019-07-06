@@ -32,5 +32,5 @@ if __name__ == '__main__':
     except KeyboardInterrupt: #キーボードが押されたとき
         pass
     finally: #終了時(ctrl+cなど)
-        pass
+        GPIO.cleanup()
 
