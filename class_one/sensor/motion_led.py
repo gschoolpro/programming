@@ -12,12 +12,12 @@ count = 0
 
 def sensor_init():  #初期設定
     GPIO.setmode(GPIO.BCM)
-    GPIO.setup(buzzer_pin, GPIO.OUT)
     pi.wiringPiSetupGpio() # GPIO名で番号を指定する
     pi.pinMode( led_pin, pi.OUTPUT )
     pi.pinMode( sensor_pin, pi.INPUT)
 
 def main():	#動作設定
+    sensor_init()
     while True:
         if( pi.digitalRead( sensor_pin ) == pi.HIGH ):	#センサが感知したとき
             while count < 5:	#ledの点滅
