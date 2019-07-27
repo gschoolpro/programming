@@ -1,3 +1,6 @@
+#!/usr/bin/python
+# -*- coding: utf-8 -*-
+
 import RPi.GPIO as GPIO
 import time
 
@@ -11,7 +14,7 @@ def setup():
     # and initial level to High(3.3v)
     GPIO.setup(BuzzerPin, GPIO.OUT, initial=GPIO.HIGH)
 
-# main関数部分
+# main function
 def main():
     while True:
     	GPIO.output(BuzzerPin, GPIO.LOW)
@@ -19,7 +22,7 @@ def main():
         GPIO.output(BuzzerPin, GPIO.HIGH)
         time.sleep(0.3)
 
-# destroy関数部分
+# destroy function
 def destroy():
     # Turn off buzzer
     GPIO.output(BuzzerPin, GPIO.HIGH)

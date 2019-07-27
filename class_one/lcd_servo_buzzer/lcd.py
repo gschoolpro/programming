@@ -1,8 +1,11 @@
+#!/usr/bin/python
+# -*- coding: utf-8 -*-
+
 import smbus
 import time
 
 # Define some device parameters
-I2C_ADDR  = 0x27 # 0x27 or 0x3f
+I2C_ADDR  = 0x3F # 0x27 or 0x3f
 LCD_WIDTH = 16   # the num that the display can show
 
 # Define some device constants
@@ -62,17 +65,17 @@ def lcd_string(message,line):
   for i in range(LCD_WIDTH):
     lcd_byte(ord(message[i]),LCD_CHR)
 
-# main関数部分
+# main function
 def main():
   # Initialise display
   lcd_init()
-  # 文字を表示する部分
+  # display character
   while True:
 	lcd_string("WELCOME TO          >", LCD_LINE_1)
 	lcd_string("IT PROGRAMMING!     >", LCD_LINE_2)
 	time.sleep(3)
 
-# 最初に実行される部分
+# main
 if __name__ == '__main__':
   try:
     main()
