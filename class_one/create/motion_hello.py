@@ -66,7 +66,7 @@ def lcd_toggle_enable(bits):
   bus.write_byte(I2C_ADDR, (bits | ENABLE))
   time.sleep(E_PULSE)
   bus.write_byte(I2C_ADDR,(bits & ~ENABLE))
-  time.sleep(E_DELAY)
+  sleep(E_DELAY)
 
 def lcd_string(message,line):
   # Send string to display
