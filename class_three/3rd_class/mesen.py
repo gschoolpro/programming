@@ -1,7 +1,7 @@
 import cv2
 import numpy as np
 def mesen(image,height,width):
-    cv2.rectangle(image,(100,330),(220,365),(0,0,0),thickness=-1)
+    cv2.rectangle(image,(100,330),(220,365),(0,0,0,255),thickness=-1)
     return image
 
 image = cv2.imread('./hannin.png',-1)
