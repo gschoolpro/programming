@@ -28,4 +28,4 @@ image[np.where((image[0:height,0:width,3] == 0))] = [255,255,255,255]
 image = bokasi(image,height,width)
 cv2.imshow('bokasi',image)
 cv2.waitKey()
-cv2.imwrite('bokasi.png',image)
+cv2.imwrite('circle_bokasi.png',image)
