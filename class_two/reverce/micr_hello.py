@@ -1,6 +1,7 @@
+# -*- coding: utf-8 -*-
 from mcpi import minecraft
 
-mc = minecraft.Minecraft.create()
+mc = minecraft.Minecraft.create()  # マインクラフトに接続
 
 mc.postToChat("Hello world")
 

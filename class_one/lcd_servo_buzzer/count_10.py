@@ -12,7 +12,7 @@ def setup():
     GPIO.setup(BuzzerPin, GPIO.OUT, initial=GPIO.HIGH)
 
 def count():
-    #for countdown
+    # for countdown
     count = 10
     while count != 0:
 	print count

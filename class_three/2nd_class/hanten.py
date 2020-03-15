@@ -1,6 +1,6 @@
 import cv2
 import numpy as np
-image = cv2.imread('./capture.jpg',cv2.IMREAD_COLOR)
+image = cv2.imread('./capture.jpg',-1)
 height = image.shape[0] 
 width = image.shape[1]
 tmp = np.empty((height,width,3))

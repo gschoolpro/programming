@@ -88,20 +88,20 @@ def main():
 
     # Send some test
 
-    if( pi.digitalRead( sensor_pin ) == pi.HIGH ):	#センサが感知したとき
+    if( pi.digitalRead( sensor_pin ) == pi.HIGH ):  # センサが感知したとき
         lcd_string("hello!         <",LCD_LINE_1)
     
-    elif( pi.digitalRead( sensor_pin ) == pi.LOW ):
+    elif( pi.digitalRead( sensor_pin ) == pi.LOW ):  # センサが感知しないとき
         lcd_byte(0x01, LCD_CMD)
 
     sleep(1)
 
 if __name__ == '__main__':
 
-  try:
+  try:  # 通常時
     main()
-  except KeyboardInterrupt:
+  except KeyboardInterrupt:  # キーボードが押されたとき
     pass
-  finally:
+  finally:  # 終了時(ctrl+cなど)
     lcd_byte(0x01, LCD_CMD)
 

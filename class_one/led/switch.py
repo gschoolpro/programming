@@ -6,35 +6,35 @@ import wiringpi as pi
 led_pin = 23
 led_switch = 24
 
-def led_init(): #初期設定
+def led_init():  # 初期設定
     GPIO.setmode(GPIO.BCM)
-    pi.wiringPiSetupGpio() # GPIO名で番号を指定する
+    pi.wiringPiSetupGpio()  # GPIO名で番号を指定する
     pi.pinMode( led_pin, pi.OUTPUT )
     pi.pinMode( led_switch, 0 )
     pi.pullUpDnControl( led_switch,2 )
 
-def main():   #動作命令
+def main():  # 動作命令
 
-    led_init() #初期設定の呼び出し
+    led_init()  # 初期設定の呼び出し
  
-    while True: #繰り返しの処理
-        if (pi.digitalRead(led_switch) == 0):   #スイッチを押したとき
+    while True:  # 繰り返しの処理
+        if (pi.digitalRead(led_switch) == 0):  # スイッチを押したとき
             pi.digitalWrite(led_pin, pi.HIGH)
             print "light on"
             time.sleep(0.1)
-        else:                                   #スイッチを押してないとき
+        else:  # スイッチを押してないとき
             pi.digitalWrite(led_pin, pi.LOW)
             print "light off"
             time.sleep(0.1)
             
-        #ここまで繰り返す
+        # ここまで繰り返す
 
 if __name__ == '__main__':
 
-    try: #通常時
+    try:  # 通常時
         main()
-    except KeyboardInterrupt: #キーボードが押されたとき
+    except KeyboardInterrupt:  # キーボードが押されたとき
         pass
-    finally: #終了時(ctrl+cなど)
+    finally:  # 終了時(ctrl+cなど)
         pi.digitalWrite(led_pin, pi.LOW)
         

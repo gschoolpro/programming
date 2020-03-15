@@ -1,5 +1,5 @@
 import cv2
-image = cv2.imread('./capture.jpg',cv2.IMREAD_COLOR)
+image = cv2.imread('./capture.jpg',-1)
 height = image.shape[0] 
 width = image.shape[1]
 image[0:height/2,:,0] = 255

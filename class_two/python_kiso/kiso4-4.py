@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-kyoushitsu = 'onoue'
+kyoushitsu = 'onoue'  # 教室名を入力
 
 if kyoushitsu == 'tatsuda':
     print('龍田教室で実施します。')
