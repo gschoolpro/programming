@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 import cv2
 import numpy as np
 import matplotlib.pyplot as plt
@@ -11,10 +12,11 @@ def main():
     cv2.imwrite("sample.png",img)
     plt.imshow(img)
     plt.show()
+
 if __name__ == '__main__':
-    try:
+    try:  # 通常時
         main()
-    except KeyboardInterrupt:
+    except KeyboardInterrupt:  # キーボードが押されたとき
         pass
-    finally:
+    finally:  # 終了時(ctrl+cなど)
         pass
